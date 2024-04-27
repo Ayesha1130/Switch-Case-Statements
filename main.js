@@ -1,15 +1,24 @@
+// Task #3 Succeeded
+console.log(chalk.bgMagentaBright("********************* Switch Case Statements **********************"));
 import inquirer from "inquirer";
 import chalk from "chalk";
-console.log(chalk.bgMagentaBright("********************* Switch Case Statements **********************"));
 let condition = true;
 while (condition) {
     let dayOfWeek = await inquirer.prompt([
         {
             name: "day",
             type: "list",
-            message: chalk.blue("Select your Day: Or Exit"),
-            choices: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Exit"]
-        }
+            message: chalk.blue("Select your Day"),
+            choices: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+            ],
+        },
     ]);
     switch (dayOfWeek.day) {
         case "Monday":
@@ -32,9 +41,6 @@ while (condition) {
             break;
         case "Sunday":
             console.log(chalk.green("Sunday: A day of rest and reflection. Prepare for the week ahead with positivity."));
-            break;
-        case "Exit":
-            console.log(chalk.bgGreenBright("Thank you For Using !"));
             break;
         default:
             console.log(chalk.magenta("Invalid Input: Enjoy your weekend"));
